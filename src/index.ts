@@ -9,12 +9,7 @@ const propertyContainer = document.querySelector(".properties");
 const footer = document.querySelector(".footer");
 
 // Reviews
-const reviews: {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string;
-}[] = [
+const reviews: any[] = [
   {
     name: "Sheia",
     stars: 5,
