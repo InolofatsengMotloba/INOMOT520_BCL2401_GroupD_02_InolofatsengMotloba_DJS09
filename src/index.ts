@@ -2,6 +2,7 @@ import "../index.css";
 
 import { showReviewTotal, populateUser } from "./utils";
 import { Permissions, LoyaltyUser } from "./enums";
+import { Price, Country } from "./types";
 
 let isLoggedIn: boolean;
 
@@ -41,9 +42,6 @@ const you = {
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
 
-// type Alias
-type Price = 45 | 30 | 25;
-
 // Array of Properties
 const properties: {
   image: string;
@@ -53,7 +51,7 @@ const properties: {
     firstLine: string;
     city: string;
     code: number;
-    country: "Colombia" | "Poland" | "United Kingdom";
+    country: Country;
   };
   contact: [number, string];
   isAvailable: boolean;
