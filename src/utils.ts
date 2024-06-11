@@ -20,8 +20,27 @@ export function showReviewTotal(
 }
 
 export function populateUser(isReturning: boolean, userName: string) {
-  if (isReturning == true) {
+  if (isReturning) {
     returningUserDisplay.innerHTML = "back";
   }
   userNameDisplay.innerHTML = userName;
 }
+
+function add(firstValue: number | string, secondValue: number | string) {
+  let result;
+  if (typeof firstValue === "number" && typeof secondValue === "number") {
+    result = firstValue + secondValue;
+  }
+  if (typeof firstValue === "string" && typeof secondValue === "string") {
+    result = firstValue + " " + secondValue;
+  }
+  if (typeof firstValue === "number" && typeof secondValue === "string") {
+    console.log("cannot perform this addition");
+  }
+  if (typeof firstValue === "string" && typeof secondValue === "number") {
+    console.log("cannot perform this addition");
+  }
+}
+
+const combinedReviews = add(5, 1);
+const firstNameLastName = add("Ania", "Kubow");
