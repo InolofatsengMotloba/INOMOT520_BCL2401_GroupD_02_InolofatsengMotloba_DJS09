@@ -51,7 +51,7 @@ const properties: {
     firstLine: string;
     city: string;
     code: number;
-    country: Country;
+    country: string;
   };
   contact: [number, string];
   isAvailable: boolean;

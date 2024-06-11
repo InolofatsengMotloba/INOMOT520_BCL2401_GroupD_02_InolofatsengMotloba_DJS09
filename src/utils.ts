@@ -3,15 +3,17 @@ import { LoyaltyUser } from "./enums";
 const reviewTotalDisplay = document.querySelector("#reviews");
 const returningUserDisplay = document.querySelector("#returning-user");
 const userNameDisplay = document.querySelector("#user");
+
 export function showReviewTotal(
   value: number,
   reviewer: string,
   isLoyalty: LoyaltyUser
-): void {
+) {
   const iconDisplay = LoyaltyUser.GOLD_USER ? "⭐" : "";
   reviewTotalDisplay.innerHTML =
-    "review total " +
     value.toString() +
+    " Review" +
+    makeMultiple(value) +
     "| last reviewed by " +
     reviewer +
     " " +
@@ -37,12 +39,8 @@ export function showDetails(
   }
 }
 
-function add(firstValue: number, secondValue: number): number {
-  return firstValue + secondValue;
-}
-
-export function makeMultiple(value: number) {
-  if (value > 1) {
+export function makeMultiple(value: number): string {
+  if (value > 1 || value == 0) {
     return "s";
-  }
+  } else return "";
 }
