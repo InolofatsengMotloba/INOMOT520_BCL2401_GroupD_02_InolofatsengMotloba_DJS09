@@ -4,6 +4,7 @@ import { showReviewTotal, populateUser } from "./utils";
 let isOpen: boolean;
 
 const propertyContainer = document.querySelector(".properties");
+const footer = document.querySelector(".footer");
 
 // Reviews
 const reviews: {
@@ -117,3 +118,13 @@ for (let i = 0; i < properties.length; i++) {
   card.appendChild(image);
   propertyContainer.appendChild(card);
 }
+
+// Footer
+let currentLocation: [string, string, number] = ["Rustenburg", "14:17", 16];
+footer.innerHTML =
+  currentLocation[0] +
+  " " +
+  currentLocation[1] +
+  " " +
+  currentLocation[2] +
+  "°";
