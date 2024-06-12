@@ -45,8 +45,8 @@ const reviews: Review[] = [
 
 // An object representing a user with various properties
 const you = {
-  firstName: "Bobby",
-  lastName: "Brown",
+  firstName: "Connor",
+  lastName: "Wehmeyer",
   permissions: Permissions.ADMIN,
   isReturning: true,
   age: 35,
