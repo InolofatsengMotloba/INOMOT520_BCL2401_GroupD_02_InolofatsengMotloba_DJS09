@@ -97,7 +97,7 @@ const properties: Property[] = [
       code: 343903,
       country: "Poland",
     },
-    contact: [+1123495082908, "garydavis@hotmail.com"],
+    contact: [+1298239028490830, "garydavis@hotmail.com"],
     isAvailable: false,
   },
   {
@@ -110,8 +110,21 @@ const properties: Property[] = [
       code: "SW4 5XW",
       country: "United Kingdom",
     },
-    contact: [+1123495082908, "andyluger@aol.com"],
+    contact: [+34829374892553, "andyluger@aol.com"],
     isAvailable: true,
+  },
+  {
+    image: "./images/malaysian-hotel.jpeg",
+    title: "Malia Hotel",
+    price: 35,
+    location: {
+      firstLine: "Room 4",
+      city: "Malia",
+      code: 45334,
+      country: "Malaysia",
+    },
+    contact: [+60349822083, "lee34@gmail.com"],
+    isAvailable: false,
   },
 ];
 
