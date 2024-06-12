@@ -7,6 +7,7 @@ import {
   getTopTwoReviews,
 } from "./utils";
 import { Price, Country } from "./types";
+import { Review } from "./interfaces";
 
 let isLoggedIn: boolean;
 
@@ -27,12 +28,7 @@ enum LoyaltyUser {
 }
 
 // Reviews
-const reviews: {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string;
-}[] = [
+const reviews: Review[] = [
   {
     name: "Sheia",
     stars: 5,
@@ -135,14 +131,7 @@ for (let i = 0; i < properties.length; i++) {
 }
 
 let count = 0;
-function addReviews(
-  array: {
-    name: string;
-    stars: number;
-    loyaltyUser: LoyaltyUser;
-    date: string;
-  }[]
-): void {
+function addReviews(array: Review[]): void {
   if (!count) {
     count++;
     const topTwo = getTopTwoReviews(array);
