@@ -1,5 +1,6 @@
 import "../index.css";
 
+// Imports from modules
 import {
   showReviewTotal,
   populateUser,
@@ -8,10 +9,12 @@ import {
 } from "./utils";
 import { Permissions, LoyaltyUser } from "./enums";
 import { Review, Property } from "./interfaces";
-import MainProperty from "./classes"
+import MainProperty from "./classes";
 
+// Declare a variable to track if the user is logged in
 let isLoggedIn: boolean;
 
+// Select DOM elements for various parts of the page
 const propertyContainer = document.querySelector(".properties");
 const reviewContainer = document.querySelector(".reviews");
 const container = document.querySelector(".container");
@@ -40,6 +43,7 @@ const reviews: Review[] = [
   },
 ];
 
+// An object representing a user with various properties
 const you = {
   firstName: "Bobby",
   lastName: "Brown",
@@ -48,7 +52,6 @@ const you = {
   age: 35,
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
-
 
 // Array of Properties
 const properties: Property[] = [
@@ -106,9 +109,10 @@ const properties: Property[] = [
   },
 ];
 
-// Functions
+// Call the showReviewTotal function to display the total number of reviews, last reviewer's name, and loyalty status
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 
+// Call the populateUser function to display a message for returning users and show the user's first name
 populateUser(you.isReturning, you.firstName);
 
 // Add the properties
@@ -123,7 +127,10 @@ for (let i = 0; i < properties.length; i++) {
   propertyContainer.appendChild(card);
 }
 
+// Initialize a count variable to keep track of the number of times the addReviews function is called
 let count = 0;
+
+// Function to add reviews to the review container
 function addReviews(array: Review[]): void {
   if (!count) {
     count++;
@@ -138,6 +145,7 @@ function addReviews(array: Review[]): void {
   }
 }
 
+// Event listener for the Review element
 button.addEventListener("click", () => addReviews(reviews));
 
 // Footer
@@ -150,6 +158,7 @@ footer.innerHTML =
   currentLocation[2] +
   "°";
 
+// Create a new instance of the MainProperty class representing the user's main property
 let yourMainProperty = new MainProperty(
   "./images/italian-property.jpg",
   "Italian House",
@@ -163,7 +172,8 @@ let yourMainProperty = new MainProperty(
   ]
 );
 
-const mainImageContainer = document.querySelector(".main-image");
-const image = document.createElement("img");
-image.setAttribute("src", yourMainProperty.src);
-mainImageContainer.appendChild(image);
+// Main Image (Italian Property)
+const mainImageContainer = document.querySelector(".main-image"); // Select the main image container element from the DOM
+const image = document.createElement("img"); // Create a new image element
+image.setAttribute("src", yourMainProperty.src); // Set the 'src' attribute of the image element to the source URL of the user's main property
+mainImageContainer.appendChild(image); // Append the image element to the main image container in the DOM
