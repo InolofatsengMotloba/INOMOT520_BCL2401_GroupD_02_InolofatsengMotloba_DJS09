@@ -1,6 +1,8 @@
+// Imports from modules
 import { LoyaltyUser } from "./enums";
 import { Price, Country } from "./types";
 
+// Define the Review interface to represent a review of a property
 export interface Review {
   name: string;
   stars: number;
@@ -8,6 +10,7 @@ export interface Review {
   date: string;
 }
 
+// Define the Property interface to represent a property listing
 export interface Property {
   image: string;
   title: string;
