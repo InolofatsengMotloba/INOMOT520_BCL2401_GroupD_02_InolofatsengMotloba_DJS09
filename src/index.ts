@@ -6,8 +6,8 @@ import {
   showDetails,
   getTopTwoReviews,
 } from "./utils";
-import { Price, Country } from "./types";
-import { Review } from "./interfaces";
+import { Permissions, LoyaltyUser } from "./enums";
+import { Review, Property } from "./interfaces";
 
 let isLoggedIn: boolean;
 
@@ -16,16 +16,6 @@ const reviewContainer = document.querySelector(".reviews");
 const container = document.querySelector(".container");
 const button = document.querySelector("button");
 const footer = document.querySelector(".footer");
-
-enum Permissions {
-  ADMIN = "ADMIN",
-  READ_ONLY = "READ_ONLY",
-}
-enum LoyaltyUser {
-  GOLD_USER = "GOLD_USER",
-  SILVER_USER = "SILVER_USER",
-  BRONZE_USER = "BRONZE_USER",
-}
 
 // Reviews
 const reviews: Review[] = [
@@ -58,19 +48,6 @@ const you = {
   stayedAt: ["florida-home", "oman-flat", "tokyo-bungalow"],
 };
 
-interface Property {
-  image: string;
-  title: string;
-  price: Price;
-  location: {
-    firstLine: string;
-    city: string;
-    code: number | string;
-    country: Country;
-  };
-  contact: [number, string];
-  isAvailable: boolean;
-}
 
 // Array of Properties
 const properties: Property[] = [
